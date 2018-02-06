@@ -1,0 +1,9 @@
+TensorFlow calls each of the inputs to a softmax a logit. They go on to define the softmax's inputs/logits as: "Unscaled log probabilities."
+
+Logit is a function that maps probabilities [0, 1] to [-inf, +inf].
+
+Softmax is a function that maps [-inf, +inf] to [0, 1] similar as Sigmoid. But Softmax also normalizes the sum of the values(output vector) to be 1.
+
+
+Tensorflow "with logit": It means that you are applying a softmax function to logit numbers to normalize it. The input_vector/logit is not normalized and can scale from [-inf, inf].
+

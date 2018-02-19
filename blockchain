@@ -1,0 +1,11 @@
+Understand Merkle Tree:
+	https://www.codeproject.com/Articles/1176140/Understanding-Merkle-Trees-Why-use-them-who-uses-t
+	How Git use Merkle Tree to know what files change between two commits:
+		https://blog.sourced.tech/post/difftree/
+Understand IPFS Merkle DAG:
+	https://flyingzumwalt.gitbooks.io/decentralized-web-primer/content/ipfs-dag/
+	https://github.com/llSourcell/IPFS_Demo
+IPFS have:
+	Distributed Hash Table(DHT)
+	Merkle DAG
+	Swarm Idea(from Bittorrent)

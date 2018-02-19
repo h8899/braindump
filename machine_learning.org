@@ -183,3 +183,12 @@ BATCH_NORMALIZATION
 batch normalization enables the use of higher learning rates, acts as a regularizer and can speed up training by 14 times. In this post, I show how to implement batch normalization in Tensorflow.
 
 Batch normalization is intended to solve the following problem: Changes in model parameters during learning change the distributions of the outputs of each hidden layer. This means that later layers need to adapt to these (often noisy) changes during training.
+
+Recall: TP / (TP + FN)
+Precision: TP / (TP + FP)
+
+True Positive Rate = TP / (TP + FN)
+False Positive Rate = FP / (FP + TN)
+ROC Curve will choose a lot of different thresholds, each plot graph with coordinate (TPR, FPR).
+Area under the curve bigger => Better.
+Use Kolmogorov–Smirnov test to o get the threshold point where the value of (TPR - FPR) is maximized.

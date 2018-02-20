@@ -1,0 +1,28 @@
+Data Normalization: To help remove data redundancy, insertion/delete/update anomaly(seperating database into proper tables and columns)
+	+ First Normal Form: single valued attributes
+	+ Second Normal Form: Must be FNF, and have no partial dependency(i.e one columns depends only in a subset of the   composite keys)
+	+ Third Normal Form: Transitive Dependency. When a non-prime attribute depends on other non-prime attributes rather than depending upon the prime attributes or primary key.
+			Be in SNF, does not have Transitive Dependency => Remove data duplication, data integrity achived
+
+Database Cursor = Iterator
+	Dynamic: it reflects changes while scrolling.
+	Static: doesn’t reflect changes while scrolling and works on recording of snapshot.
+	Keyset: data modification without reflection of new data is seen.
+
+Non-SQL database scale horizontally easily, because does not need to maintain ACID(Atomicity, Consistency, Isolation, Durability)
+
+Different kinds of JOIN.
+
+A Subquery or Inner query or a Nested query is a query within another SQL query and embedded within the WHERE clause.
+
+Indexes help in improving the speed as well as the query performance of database. The procedure of boosting the collection of indexes is named as Index hunting.
+
+Primary key cannot have NULL value, the unique constraints can have NULL values. There is only one primary key in a table, but there can be multiple unique constrains
+
+DDL stands for Data Definition Language. SQL queries like CREATE, ALTER, DROP and RENAME come under this.
+DML stands for Data Manipulation Language. SQL queries like SELECT, INSERT and UPDATE come under this.
+DCL stands for Data Control Language. SQL queries like GRANT and REVOKE come under this.
+
+: A Trigger is a code that associated with insert, update or delete operations. The code is executed automatically whenever the associated query is executed on a table. Triggers can be useful to maintain integrity in database
+
+Controlling Data Redundancy , Sharing of Data, Data Consistency, Control Over Concurrency ,  

@@ -1,9 +1,13 @@
 Data Normalization: To help remove data redundancy, insertion/delete/update anomaly(seperating database into proper tables and columns)
 	+ First Normal Form: single valued attributes
-	+ Second Normal Form: Must be FNF, and have no partial dependency(i.e one columns depends only in a subset of the   composite keys)
+	+ Second Normal Form: Must be FNF, and have no partial dependency(partial dependency: one columns depends only in a subset of the   composite keys)
 	+ Third Normal Form: Transitive Dependency. When a non-prime attribute depends on other non-prime attributes rather than depending upon the prime attributes or primary key.
 			Be in SNF, does not have Transitive Dependency => Remove data duplication, data integrity achived
 
+Data Denormalization: typically have to bring back some data redundancy either for performance reasons or to maintain a history.
+
+
+			
 Database Cursor = Iterator
 	Dynamic: it reflects changes while scrolling.
 	Static: doesn’t reflect changes while scrolling and works on recording of snapshot.
@@ -26,3 +30,11 @@ DCL stands for Data Control Language. SQL queries like GRANT and REVOKE come und
 : A Trigger is a code that associated with insert, update or delete operations. The code is executed automatically whenever the associated query is executed on a table. Triggers can be useful to maintain integrity in database
 
 Controlling Data Redundancy , Sharing of Data, Data Consistency, Control Over Concurrency ,  
+
+What is star schema? The star schema architecture is the simplest data warehouse schema. It is called a star schema because the diagram resembles a star, with points radiating from a center. The center of the star consists of fact table 
+and the points of the star are the dimension tables. Usually the fact tables in a star schema are in third normal form(3NF) whereas dimensional tables are de-normalized. Despite the fact 
+that the star schema is the simplest architecture, it is most commonly used nowadays and is recommended by Oracle.
+The most obvious characteristic of the star schema is that dimension tables are not normalized
+
+Snowflake schema: Same as star schema, but dimension tables are normalized.
+

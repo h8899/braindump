@@ -1,0 +1,20 @@
+CAP Theorem
+
+http://horicky.blogspot.com/2009/11/nosql-patterns.html
+
+DATA PARTITIONING - Consistent Hashing: Since the overall hashtable is distributed across many VNs, we need a way to map each key to the corresponding VN. In the consistent hashing scheme, the key space is finite and lie on the circumference of  
+a ring. The virtual node id is also allocated from the same key space. For any key, its owner node is defined as the first 	encountered virtual node if walking clockwise from that key
+
+DATA REPLICATION - E.g: A virtual node will store data from 3 consecutive previous ranges in the ring scheme.
+
+CLIENT CONSISTENCY: - Depends on which consistency model to provide, 2 mechanisms need to be arranged ...
+How the client request is dispatched to a replica
+How the replicas propagate and apply the updates
+
+MASTER SLAVE (or Single Master) MODEL
+Under this model, each data partition has a single master and multiple slaves. In above model, B is the master of keyAB and C, D are the slaves. There are 2 ways how the master propagate updates to the slave; State transfer and Operation transfer. In State transfer, the master passes its latest state to the slave, which then replace its current state with the latest state. In operation transfer, the master propagate a sequence of operations to the slave which then apply the operations in its local state.
+
+MULTI-MASTER MODEL
+If there is hot spots in certain key range, and there is intensive write request, the master slave model will be unable to spread the workload evenly. Multi-master model allows updates to happen at any replica (I think call it "No-Master" is more accurate).
+
+MAP-REDUCE: The system will push the map and reduce function to all the nodes (ie: moving the processing logic towards the data). The map function of the input keys will be distributed among the replicas of owning those input, and then forward the map output to the reduce function, where the aggregation logic will be executed.

@@ -45,3 +45,109 @@ For a capacity-constrained queue, the difference is that add() always
 returns true and throws an exception if it can't add the element,
 whereas offer() is allowed to return false if it can't add the
 element.
+
+VOLATILE:
+	When a thread read from memory, it will save a copy to its CPU cache and perform there for performance efficiency.
+	Volatile means that read and write that variable directly in main memory.
+
+SYNCHRONIZED keyword: Used to protect Critical Section.
+
+Cannot override static method
+
+Java static block
+	Is used to initialize the static data member.
+	It is executed before main method at the time of classloading.
+
+Why method overloading is not possible by changing the return type in java: Because of compile-time ambiguity.
+
+In case of static binding type of object is determined at compile time whereas in dynamic binding type of object is determined at runtime.
+
+If there is any abstract method in a class, that class must be abstract.
+
+abstract class can never be instantiated
+
+The static import feature of Java 5 facilitate the java programmer to access any static member of a class directly. There is no need to qualify it by the class name.
+
+The classes that extend RuntimeException are known as unchecked exceptions e.g. ArithmeticException,NullPointerException etc. Unchecked exceptions are not checked at compile-time.
+
+The classes that extend Throwable class except RuntimeException and Error are known as checked exceptions e.g.IOException,SQLException etc. Checked exceptions are checked at compile-time.
+
+StringBuffer is synchronized whereas StringBuilder is not synchronized.
+
+ A class which is declared inside another class is known as nested class. There are 4 types of nested class member inner class, local inner class, annonymous inner class and static nested class
+
+ You can call the private method from outside the class by changing the runtime behaviour of the class.
+
+By the help of java.lang.Class class and java.lang.reflect.Method class, we can call private method from any other class.
+
+Java Reflection is a process of examining or modifying the run time behavior of a class at run time.
+
+finalize is called before Garbage Collection.
+
+The join() method waits for a thread to die. In other words, it causes the currently running threads to stop executing until the thread it joins with completes its task. (similar to wait() in C)
+
+The daemon threads are basically the low priority threads that provides the background support to the user threads. It provides services to the user threads
+
+The shutdown hook is basically a thread i.e. invoked implicitely before JVM shuts down. So we can use it perform clean up resource.
+
+If you make any static method as synchronized, the lock will be on the class not on object
+
+The notify() is used to unblock one waiting thread whereas notifyAll() method is used to unblock all the threads in waiting state.
+
+No.	ArrayList	LinkedList
+1)	ArrayList uses a dynamic array.	LinkedList uses doubly linked list.
+2)	ArrayList is not efficient for manipulation because a lot of shifting is required.	LinkedList is efficient for manipulation.
+3)	ArrayList is better to store and fetch data.	LinkedList is better to manipulate data.
+
+
+No.	Iterator	ListIterator
+1)	Iterator traverses the elements in forward direction only.	ListIterator traverses the elements in backward and forward directions both.
+2)	Iterator can be used in List, Set and Queue.	ListIterator can be used in List only.
+
+No.	Iterator	Enumeration
+1)	Iterator can traverse legacy and non-legacy elements.	Enumeration can traverse only legacy elements.
+2)	Iterator is fail-fast.	Enumeration is not fail-fast.
+3)	Iterator is slower than Enumeration.	Enumeration is faster than Iterator.
+
+HashSet maintains no order whereas TreeSet maintains ascending order.
+
+HashSet contains only values whereas HashMap contains entry(key,value). HashSet can be iterated but HashMap need to convert into Set to be iterated.
+
+No.	HashMap													Hashtable
+1)	HashMap is not synchronized.								Hashtable is synchronized.
+2)	HashMap can contain one null key and multiple null values.	Hashtable cannot contain any null key or null value.
+
+Collection is an interface whereas Collections is a class. Collection interface provides normal functionality of data structure to List, Set and Queue. But, Collections class is to sort and synchronize collection elements.
+
+The default size of load factor is 0.75. The default capacity is computed as initial capacity * load factor. For example, 16 * 0.75 = 12. So, 12 is the default capacity of Map.
+
+No.	Comparable																Comparator
+1)	Comparable provides only one sort of sequence.							Comparator provides multiple sort of sequences.
+2)	It provides one method named compareTo().								It provides one method named compare().
+3)	It is found in java.lang package.										it is found in java.util package.
+4)	If we implement Comparable interface, actual class is modified.			Actual class is not modified.
+
+
+Array is a fixed length data structure whereas ArrayList is a variable length Collection class. We cannot change length of array once created in Java but ArrayList can be changed.We cannot store primitives in ArrayList, it can only store objects. 
+But array can contain both primitives and objects in Java. Since Java 5, primitives are automatically converted in objects which is known as auto-boxing.
+Autoboxing is the automatic conversion that the Java compiler makes between the primitive types and their corresponding object wrapper classes. For example, converting an int to an Integer, a double to a Double, and so on. If the conversion goes the other way, this is called unboxing.
+
+
+The list being synchronized only means that add, remove etc. operations are synchronized and therefore atomic. Iteration however is not and if a thread adds while another is iterating, you could get a ConcurrentModificationException.
+By manually synchronizing your iteration block, you ensure that the list is not modified while iterating.
+
+Serializable is a marker interface (has no data member and method). It is used to "mark" java classes so that objects of these classes may get certain capability. The Cloneable and Remote are also marker interfaces.
+
+Serialization is usually used When the need arises to send your data over network or stored in files. By data I mean objects and not text.
+Now the problem is your Network infrastructure and your Hard disk are hardware components that understand bits and bytes but not JAVA objects.
+Serialization is the translation of your Java object's values/states to bytes to send it over network or save it.
+
+Java transient keyword is used in serialization. If you define any data member as transient, it will not be serialized.
+
+Object Graph in Java Serialization
+
+JAVA 8 FEATURES
+	+ Java Time API
+	+ forEach, with a Consumer class inside, with method "accept".
+	+ A new java.util.stream has been added in Java 8 to perform filter/map/reduce like operations with the collection.
+	Collection interface has been extended with stream() and parallelStream() default methods to get the Stream for sequential and parallel execution
